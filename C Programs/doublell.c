@@ -4,7 +4,7 @@ struct node
 {
     int data;
     struct node *next;
-    struct node *previous;
+    struct node *prv; /* prv = previous */
 };
 struct node *head;
 void create_dll()
@@ -14,13 +14,13 @@ void create_dll()
     newnode1=(struct node*)malloc(sizeof(struct node));
     scanf("%d",&newnode1->data);
     head=newnode1;
-    newnode1->previous=NULL;
+    newnode1->prv=NULL;
     do
     {
         newnode2=(struct node*)malloc(sizeof(struct node));
         scanf("%d",&newnode2->data);
         newnode1->next=newnode2;
-        newnode2->previous=newnode1;
+        newnode2->prv=newnode1;
         newnode1=newnode2;
         printf("Do you want to add more nodes(Y/N)");
         scanf(" %c",&ch);
